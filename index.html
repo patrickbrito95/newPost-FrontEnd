@@ -1,0 +1,145 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Drogaria São Paulo</title>
+
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style/all.css">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+    <!--SIDE BAR-->
+<body>
+
+    <div>
+        <input type="checkbox" id="check">
+            <label for="check">
+                <i class="fas fa-bars" id="btn"></i>
+                <i class="fas fa-times" id="cancel"></i>
+            </label>
+    <div class="sidebar">
+        <header>Dashboard</header>
+            <a href="#" class="active">
+                <i class="fas fa-home"></i>
+                    <span>Home</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-shopping-bag"></i>
+                    <span>Pedidos</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-plus-circle"></i>
+                    <span>Novo Pedido</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-tags"></i>
+                    <span>Etiquetas</span>
+            </a>
+                <br></br>
+
+            <a href="#">
+                <i class="fas fa-lock"></i>
+                <span>Alterar Senha</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-power-off"></i>
+                <span>Logout</span>
+            </a>
+</div>
+    
+<!-- TITLE AND BUTTONS -->
+
+<div class="title">
+    <h1>
+        <br>Olá,</br>
+        <strong>Drogaria São Paulo</strong>
+    </h1>
+    <div class="btn-title">
+        <a href="#" id="myButton">Total</a>
+        <a href="#" id="myButton">Depositados</a>
+        <a href="#" id="myButton">Atrasados</a>
+        <a href="#" id="myButton">Coletados</a>
+        <br></br>
+        <button href="#" id="pedidos">Novos Pedidos</button>
+    </div>
+</div>
+<!-- SEARCHBAR & TABLE -->
+<div>
+    <input id="search" onkeyup="filter()" type="text" placeholder="Search">
+</div>
+<div class="div-table">
+    <table class="table table-dark">
+        <tr>
+            <th data-colname="Locker" data-order="desc">Locker &#9660</th>
+            <th data-colname="Cliente" data-order="desc">Cliente &#9660</th>
+            <th data-colname="Pedido" data-order="desc">Pedido &#9650</th>
+            <th data-colname="Telefone" data-order="desc">Telefone &#9650</th>
+            <th data-colname="Data" data-order="desc">Data de Criação &#9650</th>
+            <th data-colname="Status" data-order="desc">Status &#9650</th>
+        </tr>
+        <tbody id="myTable">
+            
+        </tbody>
+    </table>
+</div>
+
+
+
+<script>
+var myArray = [
+    {'locker':'Shop Tiete', 'cliente':'Diego','pedido':'7639149', 'telefone':'11 98452 4412', 'data':'24/11/2020', 'status':'Depositado'},
+    {'locker':'Shop Tiete', 'cliente':'Emerson','pedido':'7639149', 'telefone':'11 98452 4412', 'data':'24/11/2020', 'status':'Depositado'},
+    {'locker':'Shop Tiete', 'cliente':'Esdras','pedido':'7639145', 'telefone':'11 98452 4412', 'data':'24/11/2020', 'status':'Atrasado'},
+    {'locker':'Shop Tiete', 'cliente':'Gustavo','pedido':'7639150', 'telefone':'11 98452 4412', 'data':'24/11/2020', 'status':'Depositado'},
+    {'locker':'Av Mutinga', 'cliente':'Jose','pedido':'7639141	', 'telefone':'11 98452 4412', 'data':'24/11/2020', 'status':'Depositado'},
+    {'locker':'Shop Tiete', 'cliente':'Julio','pedido':'7639148	', 'telefone':'11 98452 4412', 'data':'24/11/2020', 'status':'Depositado'},
+    {'locker':'Shop Tiete', 'cliente':'Maria','pedido':'7639142', 'telefone':'11 98452 4412', 'data':'24/11/2020', 'status':'Retirado'},
+    {'locker':'Shop Tiete', 'cliente':'Renato','pedido':'7639143', 'telefone':'11 98452 4412', 'data':'24/11/2020', 'status':'Retirado'},
+    {'locker':'Av Mutinga', 'cliente':'Rosane','pedido':'7639147', 'telefone':'11 98452 4412', 'data':'24/11/2020', 'status':'Depositado'},
+    {'locker':'Shop Tiete', 'cliente':'William','pedido':'7639146', 'telefone':'11 98452 4412', 'data':'24/11/2020', 'status':'Depositado'},
+    
+]
+
+
+buildTable(myArray) 
+    
+function buildTable(data){
+    var table = document.getElementById('myTable')
+    table.innerHTML = ''
+    for (var i = 0; i < data.length; i++){
+        var colname = `locker-${i}`
+        var colage = `cliente-${i}`
+        var colbirth = `pedido-${i}`
+        var colbirth = `telefone-${i}`
+        var colbirth = `data-${i}`
+        var colbirth = `status-${i}`
+
+        var row = `<tr>
+                        <td>${data[i].locker}</td>
+                        <td>${data[i].cliente}</td>
+                        <td>${data[i].pedido}</td>
+                        <td>${data[i].telefone}</td>
+                        <td>${data[i].data}</td>
+                        <td>${data[i].status}</td>
+                   </tr>`
+        table.innerHTML += row
+    }
+}
+// SEARCH LOGIC
+   
+
+</script>
+
+</div>
+</body>
+
+</html>
