@@ -1,8 +1,18 @@
 
 .div-table {
     margin:0 auto;
-    margin-top: 5%;
+    margin-top: 2%;
+    padding-bottom: 12%;
     width: 65%;
     padding-left: 5%;
 
+}
+
+tr {
+    height: 60px;
+}
+
+td, tr, th {
+    text-align: center; 
+    vertical-align: middle;
 }

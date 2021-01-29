@@ -16,15 +16,17 @@
   background:rgb(36,36,36);
   transition: all .5s ease;
   box-shadow: 10px 0px 18px -1px rgba(105,132,126,1);
+  border-radius: 50px;
 }
 .sidebar header{
   font-size: 28px;
   color: white;
   line-height: 70px;
   text-align: center;
-  background: #1b1b1b;
+  background: rgb(36,36,36);
   user-select: none;
   font-family: 'Montserrat', sans-serif;
+  border-radius: 50px;
 }
 .sidebar a{
   display: block;
